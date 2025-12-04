@@ -3,7 +3,6 @@
 export const minikitConfig = {
   // ★ここはまだ空欄でOKです（ステップ5で埋めます）
   accountAssociation: { 
-    "accountAssociation": {
       "header": "eyJmaWQiOjE1NTY4NTMsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhiMTBmOUM2OTExOTE5ZDQyZDEwMjI5OTJiYTQ5NENCMzhDNkQ2ZTdlIn0",
       "payload": "eyJkb21haW4iOiJuZXctbWluaS1hcHAtcXVpY2tzdGFydC1ldGEtdHdvLnZlcmNlbC5hcHAifQ",
       "signature": "3f4JvTJuU53/2Df56u3WpEXTXD0Lhbb0Rk1FnuYVuAFozEanTAFIl+oyyDXEZ69v+x5p4ofuyNDsx0DI+kuXcRs="
