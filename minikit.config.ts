@@ -1,23 +1,18 @@
-const ROOT_URL =
-  process.env.NEXT_PUBLIC_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000');
+// minikit.config.ts
 
-/**
- * MiniApp configuration object. Must follow the Farcaster MiniApp specification.
- *
- * @see {@link https://miniapps.farcaster.xyz/docs/guides/publishing}
- */
 export const minikitConfig = {
-  accountAssociation: {
-    header: "",
-    payload: "",
-    signature: ""
+  // ★ここはまだ空欄でOKです（ステップ5で埋めます）
+  accountAssociation: { 
+    "accountAssociation": {
+      "header": "eyJmaWQiOjE1NTY4NTMsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhiMTBmOUM2OTExOTE5ZDQyZDEwMjI5OTJiYTQ5NENCMzhDNkQ2ZTdlIn0",
+      "payload": "eyJkb21haW4iOiJuZXctbWluaS1hcHAtcXVpY2tzdGFydC1ldGEtdHdvLnZlcmNlbC5hcHAifQ",
+      "signature": "3f4JvTJuU53/2Df56u3WpEXTXD0Lhbb0Rk1FnuYVuAFozEanTAFIl+oyyDXEZ69v+x5p4ofuyNDsx0DI+kuXcRs="
   },
   miniapp: {
     version: "1",
-    name: "Cubey", 
-    subtitle: "Your AI Ad Companion", 
-    description: "Ads",
+    name: "26App",            // ★アプリ名を変えるならここ
+    subtitle: "My First App",    // ★サブタイトル
+    description: "Testing app",  // ★説明文
     screenshotUrls: [`${ROOT_URL}/screenshot-portrait.png`],
     iconUrl: `${ROOT_URL}/blue-icon.png`,
     splashImageUrl: `${ROOT_URL}/blue-hero.png`,
@@ -25,12 +20,11 @@ export const minikitConfig = {
     homeUrl: ROOT_URL,
     webhookUrl: `${ROOT_URL}/api/webhook`,
     primaryCategory: "social",
-    tags: ["marketing", "ads", "quickstart", "waitlist"],
-    heroImageUrl: `${ROOT_URL}/blue-hero.png`, 
+    tags: ["test", "demo"],
+    heroImageUrl: `${ROOT_URL}/blue-hero.png`,
     tagline: "",
     ogTitle: "",
     ogDescription: "",
     ogImageUrl: `${ROOT_URL}/blue-hero.png`,
   },
 } as const;
-
