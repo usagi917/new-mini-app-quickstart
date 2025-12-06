@@ -65,6 +65,19 @@
   font-weight: 300;
 }
 
+  transition: color 0.2s ease;
+}
+
+.statusLoading {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.statusSuccess {
+  color: #8ef7d0;
+}
+
+.statusError {
+  color: #ff9b9b;
 .form {
   display: flex;
   flex-direction: column;

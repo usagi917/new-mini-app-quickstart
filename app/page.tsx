@@ -45,6 +45,28 @@ export default function Home() {
     { method: "GET" }
   );
 
+  const { statusMessage, statusClass } = useMemo(() => {
+    if (isAuthLoading) {
+      return { statusMessage: "Authenticating...", statusClass: styles.statusLoading };
+    }
+
+    if (authData?.success) {
+      return { statusMessage: "Authentication verified", statusClass: styles.statusSuccess };
+    }
+
+    if (authIssueMessage) {
+      return { statusMessage: authIssueMessage, statusClass: styles.statusError };
+    }
+
+    return { statusMessage: "Authentication required", statusClass: styles.statusError };
+  }, [authData, authIssueMessage, isAuthLoading]);
+
+  useEffect(() => {
+    if (authData?.success && error) {
+      setError("");
+    }
+  }, [authData?.success, error]);
+
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -92,12 +114,8 @@ export default function Home() {
       <div className={styles.content}>
         <div className={styles.waitlistForm}>
           <h1 className={styles.title}>Join {minikitConfig.miniapp.name.toUpperCase()}</h1>
-          
-          <p className={styles.subtitle}>
-             Hey {context?.user?.displayName || "there"}, Get early access and be the first to experience the future of<br />
-            crypto marketing strategy.
-          </p>
-
+          <p className={`${styles.status} ${statusClass}`} aria-live="polite">
+            {statusMessage}
           <form onSubmit={handleSubmit} className={styles.form}>
             <input
               type="email"
