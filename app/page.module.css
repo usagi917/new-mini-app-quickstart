@@ -66,6 +66,7 @@
 }
 
   transition: color 0.2s ease;
+  text-align: center;
 }
 
 .statusLoading {
