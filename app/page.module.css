@@ -65,8 +65,7 @@
   font-weight: 300;
 }
 
-  transition: color 0.2s ease;
-  text-align: center;
+  margin: 0 0 2rem;
 }
 
 .statusLoading {
