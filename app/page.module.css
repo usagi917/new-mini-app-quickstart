@@ -65,6 +65,7 @@
   font-weight: 300;
 }
 
+.status {
   margin: 0 0 2rem;
 }
 
@@ -78,6 +79,8 @@
 
 .statusError {
   color: #ff9b9b;
+}
+
 .form {
   display: flex;
   flex-direction: column;
